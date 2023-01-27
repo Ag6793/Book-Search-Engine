@@ -1,10 +1,7 @@
 //Need to define the necessary `Query` and `Mutation` types
-//JWT token?
-//add book?
+
 const { gql } = require('apollo-server-express');
 
-
-//addBook?savedBooks?
 const typeDefs = gql`
   type User {
     _id: ID
@@ -13,19 +10,13 @@ const typeDefs = gql`
     password: String
   }
 
-  type Thought {
+  type Book {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
-    createdAt: String
-    comments: [Comment]!
-  }
-
-  type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
+    authors: String
+    description: String
+    image: String
+    link: String
+    title: String
   }
 
   type Auth {
@@ -37,16 +28,22 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     me: User
+    books: [Book]
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    createUser(username: String!, email: String!, password: String!): Auth
+    loginUser(email: String!, password: String!): Auth
+    saveBook(bookId: ID!): User
+    deleteBook(bookId: ID!): User
   }
 `;
 
+//addBook(bookId: ID!, authors: String!, description: String!, image: String!, link: String!, title: String!): Book
+//saveBookIds
+//removeBookId
+//addUser -> createUser
+//login -> loginUser
+//saveBook <- addBook
+//deleteBook <-removeBook
 module.exports = typeDefs;
