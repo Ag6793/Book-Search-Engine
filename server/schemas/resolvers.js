@@ -13,8 +13,8 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    createUser: async (parent, args) => {
+      const user = await User.create(args);
       const token = signToken(user);
       return { token, user };
     },
@@ -36,16 +36,15 @@ const resolvers = {
       return { token, user };
     },
 
-    saveBook: async (parent, { userId, book }) => {
+    saveBook: async (parent, { bookData }, context) => {
       if (context.user) {
-        return User.findOneAndUpdate(
-          { _id: userId },
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
           {
-            $addToSet: { books: book },
+            $push: { savedBooks: bookData },
           },
           {
             new: true,
-            runValidators: true,
           }
         );
       }
@@ -54,17 +53,11 @@ const resolvers = {
     },
     deleteBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        const book = await Book.findOneAndDelete({
-          _id: bookId
-        });
-        
-        await User.findOneAndUpdate(
+        return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { books: book._id } },
+          { $pull: { savedBooks: {bookId} } },
           { new: true }
         );
-
-        return book;
       }
       throw new AuthenticationError('You need to be logged in!');
      
