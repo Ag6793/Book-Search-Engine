@@ -1,5 +1,3 @@
-//Need to define the necessary `Query` and `Mutation` types
-
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
