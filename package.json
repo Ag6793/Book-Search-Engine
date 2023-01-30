@@ -9,6 +9,10 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
+  },  
+  "engines": {
+    "node": "16.17.0",
+    "npm": "8.15.0"
   },
   "repository": {
     "type": "git",
