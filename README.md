@@ -3,14 +3,14 @@
 ![GitHub license](https://img.shields.io/badge/license-MIT-red.svg)
 
 ## Description
-This application will search for a book.
+This application will allow users to search for a new book based on keywords that are entered in the search bar.
 
-Deployed application Url: https://git.heroku.com/booksearchengine2023.git
+Deployed application Url: https://booksearchengine2023.herokuapp.com/
 
 ![Screenshot_of_readme_generator](./client/public/images/BookSearchEngine-Screenshot.jpg)
 
 ## Technologies
-* HTML
+* Javascript
 * CSS
 * MongoDB
 * Express
@@ -18,10 +18,11 @@ Deployed application Url: https://git.heroku.com/booksearchengine2023.git
 * Node.js
 
 ## Installation
-npm i, npm run seed, start server
+* Clone the project repository. 
+* Run in your command-line Npm install, npm run seed, and npm start to run the server and client. 
 
 ## Usage
-This application enables users to search for a book using specific key words
+This application enables users to search for a book using specific key words. They may be an avid reader or someone that is looking for a specific book title on a particular subject.
 
 ## Credits
 - [ALEXANDRIA GUERRERO](https://github.com/Ag6793)
