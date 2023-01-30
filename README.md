@@ -5,7 +5,7 @@
 ## Description
 This application will search for a book.
 
-Deployed application Url: 
+Deployed application Url: https://git.heroku.com/booksearchengine2023.git
 
 ![Screenshot_of_readme_generator](./client/public/images/BookSearchEngine-Screenshot.jpg)
 
