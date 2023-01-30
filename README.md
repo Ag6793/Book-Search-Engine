@@ -24,6 +24,9 @@ Deployed application Url: https://booksearchengine2023.herokuapp.com/
 ## Usage
 This application enables users to search for a book using specific key words. They may be an avid reader or someone that is looking for a specific book title on a particular subject.
 
+## Future Development
+* Currently the application will not create a new user, for future development I will debug the application to signup new users.
+
 ## Credits
 - [ALEXANDRIA GUERRERO](https://github.com/Ag6793)
 
