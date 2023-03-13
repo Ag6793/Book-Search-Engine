@@ -48,8 +48,8 @@ const SignupForm = () => {
       console.log(data);
       Auth.login(data.createUser.token);
 
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
       setShowAlert(true);
     }
 
